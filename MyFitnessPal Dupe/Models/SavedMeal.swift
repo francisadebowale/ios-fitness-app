@@ -15,14 +15,7 @@ final class SavedMeal {
         set { mealTypeRawValue = newValue.rawValue }
     }
 
-    init(
-        name: String,
-        calories: Int,
-        protein: Double,
-        carbs: Double,
-        fat: Double,
-        mealType: MealType
-    ) {
+    init(name: String, calories: Int, protein: Double, carbs: Double, fat: Double, mealType: MealType) {
         self.name = name
         self.calories = calories
         self.protein = protein
