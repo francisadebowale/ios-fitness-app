@@ -9,18 +9,13 @@ struct LogFoodView: View {
     @State private var protein = 0.0
     @State private var carbs = 0.0
     @State private var fat = 0.0
-    @State private var mealType = MealType.breakfast
-
-    private var canSave: Bool {
-        !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-    }
+    @State private var mealType: MealType = .snack
 
     var body: some View {
         NavigationStack {
             Form {
                 Section("Food") {
                     TextField("Name", text: $name)
-
                     Picker("Meal", selection: $mealType) {
                         ForEach(MealType.allCases) { meal in
                             Text(meal.displayName).tag(meal)
@@ -28,41 +23,21 @@ struct LogFoodView: View {
                     }
                 }
 
-                Section("Macros") {
-                    TextField("Calories", value: $calories, format: .number)
-                    TextField("Protein", value: $protein, format: .number)
-                    TextField("Carbs", value: $carbs, format: .number)
-                    TextField("Fat", value: $fat, format: .number)
+                Section("Nutrition") {
+                    LabeledContent("Calories") { TextField("0", value: $calories, format: .number) }
+                    LabeledContent("Protein") { TextField("0", value: $protein, format: .number) }
+                    LabeledContent("Carbs") { TextField("0", value: $carbs, format: .number) }
+                    LabeledContent("Fat") { TextField("0", value: $fat, format: .number) }
                 }
 
-                Section {
-                    Button("Log Food", action: saveEntry)
-                        .disabled(!canSave)
-                }
+                Button("Log Food", action: logFood)
             }
             .navigationTitle("Log Food")
         }
     }
 
-    private func saveEntry() {
-        let entry = FoodEntry(
-            name: name.trimmingCharacters(in: .whitespacesAndNewlines),
-            calories: calories,
-            protein: protein,
-            carbs: carbs,
-            fat: fat,
-            mealType: mealType
-        )
-        modelContext.insert(entry)
-        resetForm()
-    }
-
-    private func resetForm() {
+    private func logFood() {
+        modelContext.insert(FoodEntry(name: name, calories: calories, protein: protein, carbs: carbs, fat: fat, mealType: mealType))
         name = ""
-        calories = 0
-        protein = 0
-        carbs = 0
-        fat = 0
-        mealType = .breakfast
     }
 }

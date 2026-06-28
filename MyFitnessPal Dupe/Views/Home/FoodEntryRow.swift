@@ -5,24 +5,11 @@ struct FoodEntryRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            HStack {
-                Text(entry.name)
-                    .font(.headline)
-
-                Spacer()
-
-                Text(entry.mealType.displayName)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            }
-
-            Text("\(entry.calories) cal · P \(gramText(entry.protein)) · C \(gramText(entry.carbs)) · F \(gramText(entry.fat))")
-                .font(.subheadline)
+            Text(entry.name)
+                .font(.headline)
+            Text("\(entry.calories) kcal · P \(entry.protein.formatted())g · C \(entry.carbs.formatted())g · F \(entry.fat.formatted())g")
+                .font(.caption)
                 .foregroundStyle(.secondary)
         }
-    }
-
-    private func gramText(_ value: Double) -> String {
-        "\(value.formatted(.number.precision(.fractionLength(0))))g"
     }
 }
