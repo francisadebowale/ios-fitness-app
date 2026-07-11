@@ -1,7 +1,7 @@
 import Foundation
 
 struct StubAssistantService: AssistantService {
-    func sendMessage(_ message: String) async -> String {
-        "Assistant is not connected yet. Your message was: \"\(message)\""
+    func reply(to message: String) async throws -> String {
+        "I can help with your goals, today's log, saved meals, and saved foods."
     }
 }
