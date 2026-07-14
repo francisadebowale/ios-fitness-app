@@ -6,8 +6,22 @@
 	objectVersion = 90;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		16577BD6306C7EFE005F396F /* BACKLOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 16577BD5306C7EFE005F396F /* BACKLOG.md */; };
+		16577BD8306C7EFE005F396F /* PROGRESS.md in Resources */ = {isa = PBXBuildFile; fileRef = 16577BD7306C7EFE005F396F /* PROGRESS.md */; };
+		16577C32306D27A0005F396F /* MLXHuggingFace in Frameworks */ = {isa = PBXBuildFile; productRef = 16577C31306D27A0005F396F /* MLXHuggingFace */; };
+		16577C34306D27A0005F396F /* MLXLLM in Frameworks */ = {isa = PBXBuildFile; productRef = 16577C33306D27A0005F396F /* MLXLLM */; };
+		16577C36306D27A0005F396F /* MLXLMCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 16577C35306D27A0005F396F /* MLXLMCommon */; };
+		16577C39306D2819005F396F /* Transformers in Frameworks */ = {isa = PBXBuildFile; productRef = 16577C38306D2819005F396F /* Transformers */; };
+		16577C3C306D2843005F396F /* HuggingFace in Frameworks */ = {isa = PBXBuildFile; productRef = 16577C3B306D2843005F396F /* HuggingFace */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* MyFitnessPal Dupe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyFitnessPal Dupe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		16577BD5306C7EFE005F396F /* BACKLOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = BACKLOG.md; sourceTree = "<group>"; };
+		16577BD7306C7EFE005F396F /* PROGRESS.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PROGRESS.md; sourceTree = "<group>"; };
+		16C03422306E5B25000FBD59 /* MyFitnessPal-Dupe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MyFitnessPal-Dupe-Info.plist"; sourceTree = "<group>"; };
+		16F067BC306D69BB007E1068 /* NutritionLabelParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionLabelParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,12 +30,23 @@
 			path = "MyFitnessPal Dupe";
 			sourceTree = "<group>";
 		};
+		16577C47306D28A7005F396F /* Qwen3-1.7B-4bit */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			name = "Qwen3-1.7B-4bit";
+			path = "Models/Qwen3-1.7B-4bit";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		000000000000000130000000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				16577C34306D27A0005F396F /* MLXLLM in Frameworks */,
+				16577C36306D27A0005F396F /* MLXLMCommon in Frameworks */,
+				16577C3C306D2843005F396F /* HuggingFace in Frameworks */,
+				16577C39306D2819005F396F /* Transformers in Frameworks */,
+				16577C32306D27A0005F396F /* MLXHuggingFace in Frameworks */,
 			);
 		};
 /* End PBXFrameworksBuildPhase section */
@@ -30,8 +55,13 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				16C03422306E5B25000FBD59 /* MyFitnessPal-Dupe-Info.plist */,
 				000000000000000000000010 /* MyFitnessPal Dupe */,
+				16577BD5306C7EFE005F396F /* BACKLOG.md */,
+				16577BD7306C7EFE005F396F /* PROGRESS.md */,
+				16577C47306D28A7005F396F /* Qwen3-1.7B-4bit */,
 				000000000000000000000020 /* Products */,
+				16F067BB306D69BB007E1068 /* MyFitnessPal DupeTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -41,6 +71,14 @@
 				000000000000000000000120 /* MyFitnessPal Dupe.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		16F067BB306D69BB007E1068 /* MyFitnessPal DupeTests */ = {
+			isa = PBXGroup;
+			children = (
+				16F067BC306D69BB007E1068 /* NutritionLabelParserTests.swift */,
+			);
+			path = "MyFitnessPal DupeTests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -58,8 +96,16 @@
 			);
 			fileSystemSynchronizedGroups = (
 				000000000000000000000010 /* MyFitnessPal Dupe */,
+				16577C47306D28A7005F396F /* Qwen3-1.7B-4bit */,
 			);
 			name = "MyFitnessPal Dupe";
+			packageProductDependencies = (
+				16577C31306D27A0005F396F /* MLXHuggingFace */,
+				16577C33306D27A0005F396F /* MLXLLM */,
+				16577C35306D27A0005F396F /* MLXLMCommon */,
+				16577C38306D2819005F396F /* Transformers */,
+				16577C3B306D2843005F396F /* HuggingFace */,
+			);
 			productName = MyApp;
 			productReference = 000000000000000000000120 /* MyFitnessPal Dupe.app */;
 			productType = "com.apple.product-type.application";
@@ -88,6 +134,11 @@
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				16577C30306D27A0005F396F /* XCRemoteSwiftPackageReference "mlx-swift-lm" */,
+				16577C37306D2819005F396F /* XCRemoteSwiftPackageReference "swift-transformers" */,
+				16577C3A306D2843005F396F /* XCRemoteSwiftPackageReference "swift-huggingface" */,
+			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
@@ -102,6 +153,8 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				16577BD6306C7EFE005F396F /* BACKLOG.md in Resources */,
+				16577BD8306C7EFE005F396F /* PROGRESS.md in Resources */,
 			);
 		};
 /* End PBXResourcesBuildPhase section */
@@ -250,12 +303,18 @@
 		000000000000000111000000 /* Debug configuration for PBXNativeTarget "MyFitnessPal Dupe" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4R7752868U;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MyFitnessPal-Dupe-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos of nutrition labels so saved foods can be created locally.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Choose nutrition label photos so saved foods can be created locally.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -269,7 +328,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "devplaceholder.$(PROJECT_UNIQUE_VALUE:identifier).$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francisadebowalepersonalteam.MyFitnessPalDupe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -287,12 +346,18 @@
 		000000000000000112000000 /* Release configuration for PBXNativeTarget "MyFitnessPal Dupe" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4R7752868U;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MyFitnessPal-Dupe-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Take photos of nutrition labels so saved foods can be created locally.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Choose nutrition label photos so saved foods can be created locally.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -306,7 +371,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "devplaceholder.$(PROJECT_UNIQUE_VALUE:identifier).$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.francisadebowalepersonalteam.MyFitnessPalDupe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
@@ -341,6 +406,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		16577C30306D27A0005F396F /* XCRemoteSwiftPackageReference "mlx-swift-lm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ml-explore/mlx-swift-lm";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.31.4;
+			};
+		};
+		16577C37306D2819005F396F /* XCRemoteSwiftPackageReference "swift-transformers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huggingface/swift-transformers";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.4;
+			};
+		};
+		16577C3A306D2843005F396F /* XCRemoteSwiftPackageReference "swift-huggingface" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/huggingface/swift-huggingface";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		16577C31306D27A0005F396F /* MLXHuggingFace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16577C30306D27A0005F396F /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXHuggingFace;
+		};
+		16577C33306D27A0005F396F /* MLXLLM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16577C30306D27A0005F396F /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLLM;
+		};
+		16577C35306D27A0005F396F /* MLXLMCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16577C30306D27A0005F396F /* XCRemoteSwiftPackageReference "mlx-swift-lm" */;
+			productName = MLXLMCommon;
+		};
+		16577C38306D2819005F396F /* Transformers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16577C37306D2819005F396F /* XCRemoteSwiftPackageReference "swift-transformers" */;
+			productName = Transformers;
+		};
+		16577C3B306D2843005F396F /* HuggingFace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 16577C3A306D2843005F396F /* XCRemoteSwiftPackageReference "swift-huggingface" */;
+			productName = HuggingFace;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 000000000000000000000000 /* Project object */;
 }
