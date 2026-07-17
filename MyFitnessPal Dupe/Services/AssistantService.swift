@@ -1,5 +1,5 @@
 import Foundation
 
 protocol AssistantService {
-    func reply(to message: String) async throws -> String
+    func sendMessage(_ message: String, context: String) async -> String
 }
