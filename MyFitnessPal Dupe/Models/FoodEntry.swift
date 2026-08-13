@@ -8,6 +8,7 @@ final class FoodEntry {
     var protein: Double
     var carbs: Double
     var fat: Double
+    var fibre: Double?
     var mealTypeRawValue: String
     var date: Date
 
@@ -16,12 +17,22 @@ final class FoodEntry {
         set { mealTypeRawValue = newValue.rawValue }
     }
 
-    init(name: String, calories: Int, protein: Double, carbs: Double, fat: Double, mealType: MealType, date: Date = .now) {
+    init(
+        name: String,
+        calories: Int,
+        protein: Double,
+        carbs: Double,
+        fat: Double,
+        fibre: Double = 0,
+        mealType: MealType,
+        date: Date = .now
+    ) {
         self.name = name
         self.calories = calories
         self.protein = protein
         self.carbs = carbs
         self.fat = fat
+        self.fibre = fibre
         self.mealTypeRawValue = mealType.rawValue
         self.date = date
     }
