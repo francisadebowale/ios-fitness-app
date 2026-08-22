@@ -9,18 +9,28 @@ final class SavedMeal {
     var carbs: Double
     var fat: Double
     var mealTypeRawValue: String
+    var isFavorite: Bool?
 
     var mealType: MealType {
         get { MealType(rawValue: mealTypeRawValue) ?? .snack }
         set { mealTypeRawValue = newValue.rawValue }
     }
 
-    init(name: String, calories: Int, protein: Double, carbs: Double, fat: Double, mealType: MealType) {
+    init(
+        name: String,
+        calories: Int,
+        protein: Double,
+        carbs: Double,
+        fat: Double,
+        mealType: MealType,
+        isFavorite: Bool? = false
+    ) {
         self.name = name
         self.calories = calories
         self.protein = protein
         self.carbs = carbs
         self.fat = fat
         self.mealTypeRawValue = mealType.rawValue
+        self.isFavorite = isFavorite
     }
 }
