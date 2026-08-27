@@ -1,19 +1,23 @@
 import Foundation
 
-enum MealType: String, CaseIterable, Identifiable, Codable {
+public enum MealType: String, CaseIterable, Codable, Identifiable {
     case breakfast
     case lunch
     case dinner
     case snack
 
-    var id: String { rawValue }
+    public var id: String { rawValue }
 
     var displayName: String {
         switch self {
-        case .breakfast: "Breakfast"
-        case .lunch: "Lunch"
-        case .dinner: "Dinner"
-        case .snack: "Snack"
+        case .breakfast:
+            "Breakfast"
+        case .lunch:
+            "Lunch"
+        case .dinner:
+            "Dinner"
+        case .snack:
+            "Snack"
         }
     }
 }
