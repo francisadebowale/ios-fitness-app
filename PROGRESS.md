@@ -64,17 +64,3 @@
 - Build-for-testing succeeded after local Qwen runtime wiring.
 - Active test plan still reports 0 tests.
 
-## Needs Francis
-
-- Add or expose a real unit test target so NutritionCalculator, NutritionLabelParser, and SavedFoodCalculator tests can be added as XCTest/Testing tests. The available project currently has only the app target and 0 tests in the active test plan.
-- Suggested Xcode steps: File > New > Target > iOS Unit Testing Bundle, name it `MyFitnessPal DupeTests`, set host application to `MyFitnessPal Dupe`, add it to the active scheme/test plan, then tell me and I will add the real sample-label tests.
-- Preview capture tooling is not currently exposed in the available Xcode tools. I added preview variants and verified the project builds, but could not capture screenshots for visual inspection.
-- MLXGuidedGeneration is not currently visible in the project/package symbols or linked products, so label cleanup uses strict prompting plus Swift JSON parsing and validation for now.
-
-## Blocked
-
-- Unit tests for NutritionCalculator: blocked by missing test target / unavailable test target.
-- Unit tests for NutritionLabelParser and SavedFoodCalculator: blocked by missing test target. Parser/scaling behavior was verified with Xcode RunCodeSnippet instead.
-- Phase 2a sample label tests as real Cmd+U tests: blocked by missing unit test target.
-- Forced JSON decoding with MLXGuidedGeneration: blocked because no `MLXGuidedGeneration` APIs/products are visible in the current project dependencies.
-
